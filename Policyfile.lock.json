@@ -1,0 +1,52 @@
+{
+  "revision_id": "35633b2d5a37b547dda66cb223c40639d0adaf233e404ecc8a5dea4573f96da4",
+  "name": "Abinash_test",
+  "run_list": [
+    "recipe[Abinash_test::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "Abinash_test": {
+      "version": "0.1.0",
+      "identifier": "307124c0451a46c51f8b0d750e431e293c8c7429",
+      "dotted_decimal_identifier": "13635201540627014.55485252498689603.33162458330153",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "https://github.com/ankit100ni/kitchenFiles.git",
+        "revision": "fbfed65026489e897b6f7824befc78be0c55043b",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/HEAD -> origin/main",
+          "origin/main"
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "Abinash_test",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "Abinash_test (0.1.0)": [
+
+      ]
+    }
+  }
+}

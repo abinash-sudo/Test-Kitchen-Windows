@@ -1,0 +1,40 @@
+driver:
+  name: ec2
+  aws_ssh_key_id: Abinash_us_east_1          # Field to Update
+  region: us-east-1             # Update the location
+  #availability_zone: ap-south-1a # Field to Update
+  require_chef_omnibus: true  
+  instance_type: t3a.medium
+  #security_group_ids: sg-023c539e9f83ee5c6 # Update as per reqiurement
+  #subnet_id: subnet-1aef0973     # Field to Update
+  associate_public_ip: true
+  interface: dns
+  tags:
+    Name: "Kitchen18.0.185"                          
+    X-Contact: "abinash.prusty@progress.com"    
+    X-Dept: "PS"
+    X-TTL: "30"
+
+provisioner:
+  name: chef_zero
+  product_name: chef
+  product_version: 18.0.185
+
+platforms:
+  - name: windows-2016
+    driver:
+      # image_id: ami-04fad2f739291be60 # Windows2012R2
+      # image_id: ami-074f102f7cbc99d2f # Windows2019
+      image_id: ami-029bf1f640b75afe0 # Windows 2016
+    transport:
+      name: winrm
+      elevated: true
+      username: Administrator
+      ssh_key: /Users/abprusty/.aws/Abinash_us_east_1.pem
+
+
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+        - test/integration/default
